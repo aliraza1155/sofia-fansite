@@ -119,7 +119,6 @@ export default function CreatorDashboard({ onExit }) {
   const [bundles, setBundles] = useState([]);
   const [loadingBundles, setLoadingBundles] = useState(false);
   const [editingBundle, setEditingBundle] = useState(null);
-// for bundle content selection
 
   // Fetch all content
   const fetchContent = async () => {
@@ -131,7 +130,6 @@ export default function CreatorDashboard({ onExit }) {
       if (!res.ok) throw new Error("Failed to fetch content");
       const data = await res.json();
       setContentList(data);
-      setAvailableContent(data);
     } catch (err) {
       console.error(err);
       alert("Failed to load content");
@@ -165,7 +163,7 @@ export default function CreatorDashboard({ onExit }) {
 
   if (!loggedIn) return <CreatorLogin onLogin={() => setLoggedIn(true)} />;
 
-  // ===== Upload helpers (unchanged) =====
+  // ===== Upload helpers =====
   const checkDuplicate = async (fileName, fileType) => {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/content?title=eq.${encodeURIComponent(fileName)}&type=eq.${fileType}`, {
       headers: { "apikey": SUPABASE_SERVICE_ROLE_KEY, "Authorization": `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` }
@@ -313,7 +311,6 @@ export default function CreatorDashboard({ onExit }) {
   const deleteBundle = async (bundleId) => {
     if (!window.confirm("Delete this bundle? This will also remove all items in it.")) return;
     try {
-      // Delete bundle items first (cascade should handle, but manual safe)
       await fetch(`${SUPABASE_URL}/rest/v1/bundle_items?bundle_id=eq.${bundleId}`, { method: "DELETE", headers: { "Authorization": `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`, "apikey": SUPABASE_SERVICE_ROLE_KEY } });
       await fetch(`${SUPABASE_URL}/rest/v1/bundles?id=eq.${bundleId}`, { method: "DELETE", headers: { "Authorization": `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`, "apikey": SUPABASE_SERVICE_ROLE_KEY } });
       await fetchBundles();
@@ -361,7 +358,6 @@ export default function CreatorDashboard({ onExit }) {
         {/* Upload Tab */}
         {activeTab === "upload" && (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            {/* Left panel – upload settings */}
             <div style={{ background: CARD_BG, borderRadius: 24, border: `1px solid ${BORDER}`, padding: "24px" }}>
               <h2 style={{ color: "#fff", fontSize: 20, marginTop: 0, marginBottom: 20 }}>Upload Settings</h2>
               <div style={{ marginBottom: 24 }}>
@@ -387,7 +383,6 @@ export default function CreatorDashboard({ onExit }) {
               </div>
               {files.length > 0 && <button onClick={uploadAll} disabled={uploading} style={{ width: "100%", background: uploading ? "#333" : `linear-gradient(135deg, ${PINK}, #c73460)`, border: "none", padding: "14px", borderRadius: 16, color: "#fff", fontWeight: 700, cursor: uploading ? "not-allowed" : "pointer" }}>{uploading ? "Uploading..." : `🚀 Upload ${files.length} file(s)`}</button>}
             </div>
-            {/* Right panel – file queue */}
             <div style={{ background: CARD_BG, borderRadius: 24, border: `1px solid ${BORDER}`, padding: "24px", overflow: "auto" }}>
               <h2 style={{ color: "#fff", fontSize: 18, marginBottom: 16 }}>Upload Queue</h2>
               {files.length === 0 ? <div style={{ textAlign: "center", padding: "60px 20px", color: TEXT_DIM }}><div style={{ fontSize: 40, marginBottom: 8 }}>📂</div><div>No files selected</div></div> : (
@@ -503,7 +498,6 @@ export default function CreatorDashboard({ onExit }) {
                           ) : <div style={{ color: TEXT_MUTED, fontSize: 12 }}>No items added yet.</div>}
                         </div>
                         <button onClick={async () => {
-                          // Simple prompt to add content by ID (could be enhanced with a dropdown)
                           const cid = prompt("Enter content ID to add (from Manage Content tab)");
                           if (cid) await addBundleItem(bundle.id, cid);
                         }} style={{ marginTop: 8, background: "rgba(255,255,255,0.05)", border: `1px solid ${BORDER}`, borderRadius: 6, padding: "4px 8px", color: "#fff", cursor: "pointer", width: "100%" }}>+ Add Content</button>
