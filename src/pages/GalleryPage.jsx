@@ -68,10 +68,11 @@ export function GalleryPage() {
         <div style={{ color: "#888", fontSize: 11, letterSpacing: 2, marginBottom: 16 }}>GALLERY</div>
         {CATS.map(cat => (
           <button key={cat} onClick={() => setCategory(cat)} style={{
-            display: "block", width: "100%", textAlign: "left", background: "none", border: "none",
+            display: "block", width: "100%", textAlign: "left", border: "none",
             padding: "10px 14px", borderRadius: 8, color: category === cat ? "#fff" : "#888",
-            background: category === cat ? "rgba(232,84,122,0.1)" : "transparent", cursor: "pointer",
-            fontSize: 13, fontFamily: "inherit", borderLeft: `3px solid ${category === cat ? PINK : "transparent"}`,
+            background: category === cat ? "rgba(232,84,122,0.1)" : "transparent",
+            cursor: "pointer", fontSize: 13, fontFamily: "inherit",
+            borderLeft: `3px solid ${category === cat ? PINK : "transparent"}`,
             marginBottom: 2,
           }}>{cat}</button>
         ))}
@@ -105,10 +106,10 @@ export function GalleryPage() {
               const isLocked = !accessible;
               return (
                 <div key={photo.id} onClick={() => handlePhotoClick(photo)} style={{
-  aspectRatio: "3/4", borderRadius: 10, overflow: "hidden", cursor: "pointer",
-  position: "relative", transition: "transform 0.2s",
-  background: accessible ? "transparent" : "#1a1a1a",
-}}>
+                  aspectRatio: "3/4", borderRadius: 10, overflow: "hidden", cursor: "pointer",
+                  position: "relative", transition: "transform 0.2s",
+                  background: accessible ? "transparent" : "#1a1a1a",
+                }}>
                   {imgUrl ? (
                     <>
                       <img
