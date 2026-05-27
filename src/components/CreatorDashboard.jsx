@@ -119,7 +119,7 @@ export default function CreatorDashboard({ onExit }) {
   const [bundles, setBundles] = useState([]);
   const [loadingBundles, setLoadingBundles] = useState(false);
   const [editingBundle, setEditingBundle] = useState(null);
-  const [availableContent, setAvailableContent] = useState([]); // for bundle content selection
+// for bundle content selection
 
   // Fetch all content
   const fetchContent = async () => {

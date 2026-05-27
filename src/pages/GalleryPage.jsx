@@ -105,9 +105,10 @@ export function GalleryPage() {
               const isLocked = !accessible;
               return (
                 <div key={photo.id} onClick={() => handlePhotoClick(photo)} style={{
-                  aspectRatio: "3/4", borderRadius: 10, overflow: "hidden", cursor: "pointer",
-                  position: "relative", background: "#1a1a1a", transition: "transform 0.2s",
-                }}>
+  aspectRatio: "3/4", borderRadius: 10, overflow: "hidden", cursor: "pointer",
+  position: "relative", transition: "transform 0.2s",
+  background: accessible ? "transparent" : "#1a1a1a",
+}}>
                   {imgUrl ? (
                     <>
                       <img
