@@ -75,11 +75,6 @@ export function VideosPage() {
         <link rel="canonical" href="https://sofiavarelli.com/videos" />
       </Helmet>
       <div>
-        {/* Page Heading */}
-        <h1 style={{ fontSize: isMobile ? 24 : 32, color: "#fff", marginBottom: 16, fontFamily: "'Playfair Display', serif" }}>
-          Exclusive Video Library
-        </h1>
-
         {/* Category tabs — horizontal scroll on mobile/tablet */}
         {(isMobile || isTablet) ? (
           <div style={{
@@ -275,21 +270,6 @@ export function VideosPage() {
             >💛 Send Tip for this Video</button>
           </div>
         )}
-
-        {/* Author Bio */}
-        <div style={{ marginTop: 40, background: "#1a1a1a", borderRadius: 16, padding: "20px", display: "flex", gap: 16, alignItems: "center" }}>
-          <div style={{ width: 56, height: 56, borderRadius: "50%", background: PINK, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, fontWeight: 700 }}>S</div>
-          <div>
-            <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>Sofia Varelli</div>
-            <div style={{ color: "#888", fontSize: 12 }}>Creator</div>
-            <div style={{ color: "#aaa", fontSize: 13, marginTop: 4 }}>All videos are authentic, filmed by me. New videos added every week.</div>
-          </div>
-        </div>
-
-        {/* Last updated */}
-        <div style={{ textAlign: "center", color: "#555", fontSize: 11, marginTop: 24 }}>
-          <time dateTime="2026-06-03">Last updated: June 3, 2026</time>
-        </div>
 
         {selectedPPV && <PPVModal content={selectedPPV} onClose={() => setSelectedPPV(null)} />}
         {showSub && <SubscriptionModal onClose={() => setShowSub(false)} onLogin={() => { setShowSub(false); setShowAuth(true); }} />}
