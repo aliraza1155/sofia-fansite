@@ -209,6 +209,33 @@ export function HomePage({ onNavigate }) {
             ))}
           </div>
 
+          {/* FAQ Section (visible) */}
+          <div style={{ marginTop: 20 }}>
+            <h2 style={{ color: "#fff", fontSize: 18, marginBottom: 12 }}>Frequently Asked Questions</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div><strong style={{ color: PINK }}>What kind of content does Sofia post?</strong><br />Exclusive photos, videos, behind‑the‑scenes, and personal messages.</div>
+              <div><strong style={{ color: PINK }}>How do I subscribe?</strong><br />Click "JOIN SOFIA", choose a plan, and pay securely via CCBill.</div>
+              <div><strong style={{ color: PINK }}>Can I cancel my subscription?</strong><br />Yes, from your account settings. Cancellation takes effect at the end of the billing period.</div>
+            </div>
+          </div>
+
+          {/* Author Bio */}
+          <div style={{ background: "#1a1a1a", borderRadius: 12, padding: "16px", marginTop: 10 }}>
+            <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+              <div style={{ width: 48, height: 48, borderRadius: "50%", background: PINK, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 700 }}>S</div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700 }}>Sofia Varelli</div>
+                <div style={{ color: "#888", fontSize: 12 }}>Creator & Founder</div>
+                <div style={{ color: "#aaa", fontSize: 12, marginTop: 4 }}>Real, authentic content. I love connecting with my fans.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Last updated */}
+          <div style={{ textAlign: "center", color: "#555", fontSize: 11, marginTop: 10 }}>
+            <time dateTime="2026-06-03">Last updated: June 3, 2026</time>
+          </div>
+
           {showAuth && <AuthModal mode="signup" selectedPlan={selectedPlan} onClose={() => setShowAuth(false)} onSuccess={() => { setShowAuth(false); setShowSub(true); }} />}
           {showSub && <SubscriptionModal onClose={() => setShowSub(false)} onLogin={() => { setShowSub(false); setShowAuth(true); }} />}
         </div>
@@ -292,6 +319,7 @@ export function HomePage({ onNavigate }) {
             }}>🔒 UNLOCK ALL PHOTOS & VIDEOS</button>
           </div>
 
+          {/* Feature cards */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
             {FEATURES.map(f => (
               <div key={f.title} style={{ background: "#111", borderRadius: 12, padding: "18px 14px", border: `1px solid ${BORDER}`, textAlign: "center" }}>
@@ -300,6 +328,32 @@ export function HomePage({ onNavigate }) {
                 <div style={{ color: "#666", fontSize: 11, lineHeight: 1.5 }}>{f.desc}</div>
               </div>
             ))}
+          </div>
+
+          {/* FAQ Section */}
+          <div style={{ marginTop: 24 }}>
+            <h2 style={{ color: "#fff", fontSize: 22, marginBottom: 16 }}>Frequently Asked Questions</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              <div><strong style={{ color: PINK }}>What content does Sofia post?</strong><br />Exclusive photos, videos, BTS, and personal messages.</div>
+              <div><strong style={{ color: PINK }}>How do I subscribe?</strong><br />Click JOIN SOFIA, choose a plan, pay with CCBill.</div>
+              <div><strong style={{ color: PINK }}>Can I cancel?</strong><br />Yes, from account settings. No refunds for partial months.</div>
+              <div><strong style={{ color: PINK }}>Is my payment secure?</strong><br />Yes, CCBill is PCI compliant.</div>
+            </div>
+          </div>
+
+          {/* Author Bio */}
+          <div style={{ background: "#1a1a1a", borderRadius: 16, padding: "20px", display: "flex", gap: 16, alignItems: "center" }}>
+            <div style={{ width: 56, height: 56, borderRadius: "50%", background: PINK, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, fontWeight: 700 }}>S</div>
+            <div>
+              <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>Sofia Varelli</div>
+              <div style={{ color: "#888", fontSize: 12 }}>Creator</div>
+              <div style={{ color: "#aaa", fontSize: 13, marginTop: 4 }}>Real, authentic content. I reply to messages personally.</div>
+            </div>
+          </div>
+
+          {/* Last updated */}
+          <div style={{ textAlign: "center", color: "#555", fontSize: 11, marginTop: 8 }}>
+            <time dateTime="2026-06-03">Last updated: June 3, 2026</time>
           </div>
 
           {showAuth && <AuthModal mode="signup" selectedPlan={selectedPlan} onClose={() => setShowAuth(false)} onSuccess={() => { setShowAuth(false); setShowSub(true); }} />}
@@ -409,6 +463,50 @@ export function HomePage({ onNavigate }) {
               <div style={{ color: "#666", fontSize: 12, lineHeight: 1.5 }}>{f.desc}</div>
             </div>
           ))}
+        </div>
+
+        {/* Callout box */}
+        <div style={{ marginTop: 24, background: "rgba(232,84,122,0.1)", borderLeft: `4px solid ${PINK}`, borderRadius: 12, padding: "16px 20px" }}>
+          <div style={{ fontWeight: 700, color: PINK, marginBottom: 4 }}>🔥 New content every week</div>
+          <div style={{ color: "#ccc" }}>Subscribe now and never miss an update. Fresh photos and videos added weekly.</div>
+        </div>
+
+        {/* FAQ Section */}
+        <div style={{ marginTop: 32 }}>
+          <h2 style={{ color: "#fff", fontSize: 24, marginBottom: 20 }}>Frequently Asked Questions</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+            <div>
+              <div style={{ color: PINK, fontWeight: 700, marginBottom: 6 }}>What kind of content does Sofia post?</div>
+              <div style={{ color: "#ccc", lineHeight: 1.5 }}>Exclusive photos, videos, behind‑the‑scenes content, and personal messages. New content added weekly.</div>
+            </div>
+            <div>
+              <div style={{ color: PINK, fontWeight: 700, marginBottom: 6 }}>How do I subscribe?</div>
+              <div style={{ color: "#ccc", lineHeight: 1.5 }}>Click the "JOIN SOFIA" button, choose a plan (monthly, 3‑month, or 6‑month), and complete payment securely via CCBill.</div>
+            </div>
+            <div>
+              <div style={{ color: PINK, fontWeight: 700, marginBottom: 6 }}>Can I cancel my subscription?</div>
+              <div style={{ color: "#ccc", lineHeight: 1.5 }}>Yes, you can cancel at any time from your account settings. Cancellations take effect at the end of the current billing period.</div>
+            </div>
+            <div>
+              <div style={{ color: PINK, fontWeight: 700, marginBottom: 6 }}>Is my payment information secure?</div>
+              <div style={{ color: "#ccc", lineHeight: 1.5 }}>All payments are processed by CCBill, a PCI‑compliant processor. We do not store your credit card details.</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Author Bio */}
+        <div style={{ marginTop: 32, background: "#1a1a1a", borderRadius: 20, padding: "24px", display: "flex", gap: 24, alignItems: "center" }}>
+          <div style={{ width: 80, height: 80, borderRadius: "50%", background: PINK, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, fontWeight: 700 }}>S</div>
+          <div>
+            <div style={{ color: "#fff", fontWeight: 700, fontSize: 20 }}>Sofia Varelli</div>
+            <div style={{ color: "#888", marginBottom: 8 }}>Creator & Founder</div>
+            <div style={{ color: "#aaa", lineHeight: 1.6 }}>I'm Sofia – a real creator sharing my world with you. All content is authentic, produced by me, and uploaded only by me. I love connecting with my fans, so don't hesitate to send a message.</div>
+          </div>
+        </div>
+
+        {/* Last updated */}
+        <div style={{ textAlign: "center", color: "#555", fontSize: 12, marginTop: 32 }}>
+          <time dateTime="2026-06-03">Last updated: June 3, 2026</time>
         </div>
 
         {showAuth && <AuthModal mode="signup" selectedPlan={selectedPlan} onClose={() => setShowAuth(false)} onSuccess={() => { setShowAuth(false); setShowSub(true); }} />}
