@@ -1,7 +1,6 @@
 // src/components/LegalLayout.jsx
 import React from "react";
 
-const PINK = "#E8547A";
 const BORDER = "#2a2a2a";
 
 export function LegalLayout({ title, lastUpdated, children }) {
