@@ -71,6 +71,14 @@ export function AuthProvider({ children }) {
     await authHelpers.signOut();
   }
 
+  async function resetPassword(email) {
+    await authHelpers.resetPassword(email);
+  }
+
+  async function updatePassword(newPassword) {
+    await authHelpers.updatePassword(newPassword);
+  }
+
   function hasAccess(contentItem) {
     if (!contentItem?.is_locked) return true;
     if (subscription?.status === "active") return true;
@@ -101,6 +109,8 @@ export function AuthProvider({ children }) {
       signUp,
       signIn,
       signOut,
+      resetPassword,
+      updatePassword,
       hasAccess,
       refreshSubscription,
       refreshUnlocked,

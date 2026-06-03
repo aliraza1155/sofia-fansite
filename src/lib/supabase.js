@@ -21,7 +21,7 @@ export const supabaseAdmin = SUPABASE_SERVICE_ROLE_KEY
   : supabase; // fallback to regular client if service key missing
 
 // ============================================================
-// AUTH
+// AUTH (including password reset)
 // ============================================================
 
 export const authHelpers = {
@@ -60,6 +60,20 @@ export const authHelpers = {
 
   onAuthStateChange(callback) {
     return supabase.auth.onAuthStateChange(callback);
+  },
+
+  // Password reset – sends email with reset link
+  async resetPassword(email) {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+    if (error) throw error;
+  },
+
+  // Update password after user clicks reset link
+  async updatePassword(newPassword) {
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) throw error;
   },
 };
 
