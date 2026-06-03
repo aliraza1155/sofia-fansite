@@ -105,12 +105,13 @@ export function HomePage({ onNavigate }) {
             }} />
             <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 20px 24px", zIndex: 2 }}>
               <div style={{ color: "#aaa", fontSize: 9, letterSpacing: 3, marginBottom: 4 }}>WELCOME TO</div>
-              <div style={{
+              <h1 style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: 28, fontWeight: 700, lineHeight: 1.1, marginBottom: 10,
+                margin: 0,
               }}>
                 Sofia's<br /><span style={{ fontStyle: "italic", color: PINK }}>Private World</span>
-              </div>
+              </h1>
               <p style={{ color: "#aaa", fontSize: 12, lineHeight: 1.6, marginBottom: 16 }}>
                 Exclusive content. Real connection. Be part of my inner circle.
               </p>
@@ -231,9 +232,13 @@ export function HomePage({ onNavigate }) {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.2) 100%)", zIndex: 1 }} />
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px", zIndex: 2 }}>
                 <div style={{ color: "#aaa", fontSize: 9, letterSpacing: 3, marginBottom: 4 }}>WELCOME TO</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 30, fontWeight: 700, lineHeight: 1.1, marginBottom: 10 }}>
+                <h1 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: 30, fontWeight: 700, lineHeight: 1.1, marginBottom: 10,
+                  margin: 0,
+                }}>
                   Sofia's<br /><span style={{ fontStyle: "italic", color: PINK }}>Private World</span>
-                </div>
+                </h1>
                 <p style={{ color: "#aaa", fontSize: 12, lineHeight: 1.6, marginBottom: 14 }}>
                   Exclusive content. Real connection. Be part of my inner circle.
                 </p>
@@ -322,9 +327,13 @@ export function HomePage({ onNavigate }) {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.2) 100%)", zIndex: 1 }} />
             <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 28, zIndex: 2 }}>
               <div style={{ color: "#aaa", fontSize: 10, letterSpacing: 3, marginBottom: 4 }}>WELCOME TO</div>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, lineHeight: 1.1, marginBottom: 12 }}>
+              <h1 style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: 36, fontWeight: 700, lineHeight: 1.1, marginBottom: 12,
+                margin: 0,
+              }}>
                 Sofia's<br /><span style={{ fontStyle: "italic", color: PINK }}>Private World</span>
-              </div>
+              </h1>
               <p style={{ color: "#aaa", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>
                 Exclusive content. Real connection. Be part of my inner circle.
               </p>

@@ -1,0 +1,51 @@
+# Sofia Varelli – Complete Site Documentation
+
+## About
+Sofia Varelli is a real‑life creator. This platform offers exclusive adult content (photos, videos, direct messages) via paid subscription. No AI‑generated content. Only the creator uploads. All models are 18+ with documented consent.
+
+## Page Index
+
+### Home
+- URL: https://sofiavarelli.com/
+- Purpose: Landing page introducing Sofia, showing free preview photos, and presenting subscription plans.
+
+### Gallery
+- URL: https://sofiavarelli.com/gallery
+- Purpose: Browse all exclusive photos by category (Lingerie, Bikini, Behind the Scenes, Personal, Favorites). Locked photos require subscription or PPV.
+
+### Videos
+- URL: https://sofiavarelli.com/videos
+- Purpose: Watch exclusive videos (Solo, Bikini, Behind the Scenes, Custom). Locked videos require subscription or PPV.
+
+### Messages
+- URL: https://sofiavarelli.com/messages
+- Purpose: Direct private messaging with Sofia. Subscribers can send messages; Sofia may reply with locked media.
+
+### Bundles
+- URL: https://sofiavarelli.com/bundles
+- Purpose: Purchase discounted content packs (bundles) that include multiple photos/videos permanently.
+
+### Account
+- Login: https://sofiavarelli.com/login
+- Sign Up: https://sofiavarelli.com/signup
+- Forgot Password: https://sofiavarelli.com/forgot-password
+- Reset Password: https://sofiavarelli.com/reset-password
+
+### Legal
+- Terms of Service: https://sofiavarelli.com/terms-of-service
+- Privacy Policy: https://sofiavarelli.com/privacy-policy
+- DMCA Policy: https://sofiavarelli.com/dmca
+- 18 USC 2257: https://sofiavarelli.com/2257
+- Prohibited Content: https://sofiavarelli.com/prohibited-content-policy
+- Content Removal: https://sofiavarelli.com/content-removal
+
+## Technical
+- Platform: React SPA
+- Hosting: Vercel
+- Database: Supabase
+- Payments: CCBill (adult processor)
+- Sitemap: https://sofiavarelli.com/sitemap.xml
+- Robots: https://sofiavarelli.com/robots.txt
+
+## Contact
+- Email: support@sofiavarelli.com
